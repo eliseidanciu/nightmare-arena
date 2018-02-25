@@ -19,10 +19,8 @@ sysinfo.txt
 [Ee]xportedObj/
 *.booproj
 *.csproj
-*.sln
 *.suo
 *.svd
-*.unityproj
 *.user
 *.userprefs
 *.pidb
