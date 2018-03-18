@@ -172,10 +172,10 @@ GameObject:
   - component: {fileID: 4200625431291372}
   - component: {fileID: 111104335203754826}
   - component: {fileID: 114659901479611176}
-  - component: {fileID: 54636640363473150}
-  - component: {fileID: 136936883195237266}
-  - component: {fileID: 114710428039713896}
-  - component: {fileID: 114540844306878468}
+  - component: {fileID: 54000776196303172}
+  - component: {fileID: 136798365561410382}
+  - component: {fileID: 114809292111025322}
+  - component: {fileID: 114599340310741534}
   m_Layer: 0
   m_Name: Wizard
   m_TagString: Untagged
@@ -871,7 +871,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287758029709606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 63.67, y: -7.61, z: 281.52}
+  m_LocalPosition: {x: 0, y: 0, z: 8.88}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4894126615021372}
@@ -1416,7 +1416,7 @@ Transform:
   m_Father: {fileID: 4214870766566126}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -83.071526, y: -53.16499, z: 65.818085}
---- !u!54 &54636640363473150
+--- !u!54 &54000776196303172
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1429,7 +1429,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!111 &111104335203754826
 Animation:
@@ -1439,7 +1439,7 @@ Animation:
   m_GameObject: {fileID: 1287758029709606}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: a492cbabea1026348ab6b7956b4e782f, type: 3}
+  m_Animation: {fileID: 7400000, guid: e8b4947a8d66a124cbab1176113a8d3c, type: 3}
   m_Animations:
   - {fileID: 7400000, guid: a492cbabea1026348ab6b7956b4e782f, type: 3}
   - {fileID: 7400000, guid: e8b4947a8d66a124cbab1176113a8d3c, type: 3}
@@ -1452,7 +1452,7 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
---- !u!114 &114540844306878468
+--- !u!114 &114599340310741534
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1474,7 +1474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f340b180943584ea50b69c56919523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114710428039713896
+--- !u!114 &114809292111025322
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1485,7 +1485,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2091855ab837c834ebb4ad9534c487ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!136 &136936883195237266
+--- !u!136 &136798365561410382
 CapsuleCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
