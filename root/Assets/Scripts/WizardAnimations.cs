@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wizard : MonoBehaviour {
+public class WizardAnimations : MonoBehaviour {
 
 	public const string IDLE	= "Wizard_Idle";
 	public const string RUN		= "Wizard_Run";

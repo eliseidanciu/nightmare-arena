@@ -171,14 +171,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4200625431291372}
   - component: {fileID: 111104335203754826}
-  - component: {fileID: 114659901479611176}
   - component: {fileID: 54000776196303172}
   - component: {fileID: 136798365561410382}
   - component: {fileID: 114809292111025322}
   - component: {fileID: 114599340310741534}
+  - component: {fileID: 114357100283744602}
   m_Layer: 0
   m_Name: Wizard
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1452,6 +1452,17 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &114357100283744602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287758029709606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30f340b180943584ea50b69c56919523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114599340310741534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1461,17 +1472,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a80cf27ee9a66a4fb7534feae566079, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114659901479611176
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1287758029709606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f340b180943584ea50b69c56919523, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114809292111025322

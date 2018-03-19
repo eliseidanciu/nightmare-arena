@@ -5,7 +5,7 @@ using System.Collections;
 public class Player : MonoBehaviour
 {
 
-    float moveSpeed = 10;
+    float moveSpeed = 10f;
 
     Camera viewCamera;
     PlayerController controller;
@@ -16,7 +16,9 @@ public class Player : MonoBehaviour
         viewCamera = Camera.main;
     }
 
-    void FixedUpdate()
+
+
+    void Update()
     {
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         Vector3 moveVelocity = moveInput.normalized * moveSpeed;

@@ -4,13 +4,17 @@ using UnityEngine;
 
 
 public class CameraController : MonoBehaviour {
-    public GameObject player;
-    public float x,y,z;
+    GameObject player;
     float smoothSpeed = 0.1f;
     Vector3 offset;
 
 	void Start () {
-        offset = new Vector3(x, y, z);
+        offset = new Vector3(0, 30, -25);
+        var target = FindObjectOfType<Player>();
+        if (target.CompareTag("Player"))
+        {
+            player = target.gameObject;
+        }
     }
 	
 	void LateUpdate () {
