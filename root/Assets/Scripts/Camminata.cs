@@ -14,11 +14,17 @@ public class Camminata : MonoBehaviour {
     void FixedUpdate()
     {
         //lo so che non è fisica 
+      
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D)) //0 Tasto sinistro
         {
             //animazione.Play("Wizard_Skill");
 
             animazione.SetTrigger("Walk");
+
+        }
+        else
+        {
+            animazione.SetTrigger("ExitWalk");
 
         }
     }

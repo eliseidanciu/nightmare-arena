@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnimationOnClick : MonoBehaviour {
+public class Bomba : MonoBehaviour {
     Animator animazione;
-    
+
     // Use this for initialization
-    void Start () {
-        animazione = gameObject.GetComponent<Animator>();
+    void Start(){
     }
-	
-	void FixedUpdate () {
+
+    void FixedUpdate()
+    {
         //lo so che non è fisica 
         if (Input.GetMouseButtonDown(0)) //0 Tasto sinistro
         {
+
+            transform.GetChild(0).gameObject.SetActive(true);
+
             
-            //animazione.Play("Wizard_Skill");
-           
-            animazione.SetTrigger("Active");
 
         }
+      
+
     }
 }
