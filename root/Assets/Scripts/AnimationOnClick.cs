@@ -15,7 +15,6 @@ public class AnimationOnClick : MonoBehaviour {
         if (Input.GetMouseButtonDown(0)) //0 Tasto sinistro
         {
             
-            //animazione.Play("Wizard_Skill");
            
             animazione.SetTrigger("Active");
 
