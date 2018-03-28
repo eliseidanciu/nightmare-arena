@@ -70,7 +70,7 @@ public abstract class Character : MonoBehaviour
         {
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("CloseRangedAttack");
-            
+            var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
         }
     }
 
@@ -82,7 +82,7 @@ public abstract class Character : MonoBehaviour
         if (Time.time > nextAttackTime)
         {
             animator.SetTrigger("LongRangedAttack");
-            var newBullet = (Instantiate(bulletPrefab , bulletSpawn.position, bulletSpawn.rotation ));
+            
             
         }
 
