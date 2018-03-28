@@ -10,6 +10,8 @@ public abstract class Character : MonoBehaviour
     public float attackSpeed; //hits per minute
     public float moveSpeed;
     public bool isAlive;
+    public Bullet bulletPrefab;
+    public Transform bulletSpawn;
 
     protected float msBetweenAttacks;
     protected float nextAttackTime;
@@ -17,6 +19,7 @@ public abstract class Character : MonoBehaviour
     protected Animator animator;
     protected GameObject deathParticles;
     protected Transform target;
+    
 
     public Character()
     {
@@ -61,34 +64,29 @@ public abstract class Character : MonoBehaviour
         
     }
 
-    public virtual void CloseRangedAttack(/*IDamageable enemy*/)
+    public virtual void CloseRangedAttack()
     {
         if (Time.time > nextAttackTime)
         {
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("CloseRangedAttack");
-            Debug.Log("Attack Animation");
-            
-            // enemy.TakeDamage(attackPower);
             
         }
     }
 
     public abstract void Move();
 
-    /*
-    public virtual void LongRangedAttack(Character enemy)
+    
+    public virtual void LongRangedAttack()
     {
         if (Time.time > nextAttackTime)
         {
-            animation.Play("LongRangedAttack");
-            if (animation.IsPlaying("LongRangedAttack"))
-            {
-                Projectile newProjectile = Instantiate(Projectile, )
-            }
+            animator.SetTrigger("LongRangedAttack");
+            var newBullet = (Instantiate(bulletPrefab , bulletSpawn.position, bulletSpawn.rotation ));
+            
         }
 
-    }*/
+    }
 
     private void PropertyValidation(float minValue, float maxValue, out float value, float desiredValue)
     {

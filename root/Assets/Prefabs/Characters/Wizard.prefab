@@ -170,12 +170,10 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4200625431291372}
-  - component: {fileID: 111104335203754826}
   - component: {fileID: 54000776196303172}
   - component: {fileID: 136798365561410382}
   - component: {fileID: 114809292111025322}
   - component: {fileID: 114599340310741534}
-  - component: {fileID: 114357100283744602}
   - component: {fileID: 95310512191607748}
   m_Layer: 0
   m_Name: Wizard
@@ -657,6 +655,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1868655427713308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4527671823597430}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1870165084973542
 GameObject:
   m_ObjectHideFlags: 1
@@ -902,6 +915,7 @@ Transform:
   - {fileID: 4730880539587018}
   - {fileID: 4550868171526596}
   - {fileID: 4379447067316616}
+  - {fileID: 4527671823597430}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1083,6 +1097,19 @@ Transform:
   m_Father: {fileID: 4015488993200856}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -75.00002, y: -90.00005, z: 79.99999}
+--- !u!4 &4527671823597430
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1868655427713308}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.329, y: 0.853, z: 1.379}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4200625431291372}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4528689387425912
 Transform:
   m_ObjectHideFlags: 1
@@ -1482,27 +1509,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!111 &111104335203754826
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1287758029709606}
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: e8b4947a8d66a124cbab1176113a8d3c, type: 3}
-  m_Animations:
-  - {fileID: 7400000, guid: a492cbabea1026348ab6b7956b4e782f, type: 3}
-  - {fileID: 7400000, guid: e8b4947a8d66a124cbab1176113a8d3c, type: 3}
-  - {fileID: 7400000, guid: 2f8434480efda344384bb993d849c261, type: 3}
-  - {fileID: 7400000, guid: 19470ad5dd4036b4791650a6c70e13fb, type: 3}
-  - {fileID: 7400000, guid: 3e94babe2b0575c49a1ddde21035b445, type: 3}
-  - {fileID: 7400000, guid: c752fd911695adc4c8bb169517da3d25, type: 3}
-  - {fileID: 7400000, guid: b5eb55c4323fdcf40a059a60bb0aa32f, type: 3}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 1
 --- !u!111 &111973934934561672
 Animation:
   m_ObjectHideFlags: 1
@@ -1528,17 +1534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e19e34bc3b20ed48af02730d55a7976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114357100283744602
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1287758029709606}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30f340b180943584ea50b69c56919523, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  animazione: {fileID: 0}
 --- !u!114 &114599340310741534
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1567,6 +1563,9 @@ MonoBehaviour:
   attackSpeed: 60
   moveSpeed: 10
   isAlive: 1
+  bulletPrefab: {fileID: 114398917387943650, guid: f280f9b2583e9694f8435959285d914e,
+    type: 2}
+  bulletSpawn: {fileID: 4527671823597430}
 --- !u!136 &136798365561410382
 CapsuleCollider:
   m_ObjectHideFlags: 1

@@ -22,6 +22,10 @@ public class Player : Character
         {
             CloseRangedAttack();
         }
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            LongRangedAttack();
+        }
       
     }
 
