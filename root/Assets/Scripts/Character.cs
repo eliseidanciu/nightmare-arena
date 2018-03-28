@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Character : MonoBehaviour, IDamageable
+public abstract class Character : MonoBehaviour
 {
     public float hp;
     public float armor;
@@ -40,7 +40,7 @@ public abstract class Character : MonoBehaviour, IDamageable
         msBetweenAttacks = (60 / attackSpeed) * 1000;
     }
 
-    public void TakeDamage(float enemyAttackPower)
+    public virtual void TakeDamage(float enemyAttackPower)
     {
         animator.Play("TakeDamage");
         float damage = enemyAttackPower / 100 * armor;
@@ -51,7 +51,7 @@ public abstract class Character : MonoBehaviour, IDamageable
         }
     }
 
-    public void Die()
+    public virtual void Die()
     {
         animator.Play("Die");
         isAlive = false;
@@ -61,7 +61,7 @@ public abstract class Character : MonoBehaviour, IDamageable
         
     }
 
-    public void CloseRangedAttack(/*IDamageable enemy*/)
+    public virtual void CloseRangedAttack(/*IDamageable enemy*/)
     {
         if (Time.time > nextAttackTime)
         {
@@ -77,7 +77,7 @@ public abstract class Character : MonoBehaviour, IDamageable
     public abstract void Move();
 
     /*
-    public void LongRangedAttack(Character enemy)
+    public virtual void LongRangedAttack(Character enemy)
     {
         if (Time.time > nextAttackTime)
         {
