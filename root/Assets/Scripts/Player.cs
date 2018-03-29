@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(PlayerController), typeof(Camera))]
 public class Player : Character
 {
     Camera viewCamera;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent (typeof(Animator))]
 public abstract class Character : MonoBehaviour
 {
     public float hp;
@@ -18,7 +19,6 @@ public abstract class Character : MonoBehaviour
 
     protected Animator animator;
     protected GameObject deathParticles;
-    protected Transform target;
     
 
     public Character()
