@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 455730}
   - component: {fileID: 54708442927503668}
   - component: {fileID: 136727557842122426}
+  - component: {fileID: 114177654019594822}
   m_Layer: 0
   m_Name: Impling
   m_TagString: Enemy
@@ -1406,6 +1407,25 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114177654019594822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 138910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e3f4d8676f6256479ab20638b2ac5a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 100
+  armor: 10
+  attackPower: 10
+  attackSpeed: 60
+  moveSpeed: 10
+  isAlive: 1
+  bulletPrefab: {fileID: 0}
+  bulletSpawn: {fileID: 0}
 --- !u!136 &136727557842122426
 CapsuleCollider:
   m_ObjectHideFlags: 1
