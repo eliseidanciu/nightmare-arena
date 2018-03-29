@@ -345,8 +345,7 @@ Prefab:
       propertyPath: m_Name
       value: FireDemon
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114489361866395698, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1321747254
@@ -391,29 +390,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 11b854e7e7aebbe4fbdca2eeb0c71c10, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &1460263300 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
-  m_PrefabInternal: {fileID: 2024862978}
---- !u!114 &1460263304
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1460263300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e3f4d8676f6256479ab20638b2ac5a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 100
-  armor: 0
-  attackPower: 10
-  attackSpeed: 60
-  moveSpeed: 10
-  isAlive: 1
-  bulletPrefab: {fileID: 0}
-  bulletSpawn: {fileID: 0}
 --- !u!1001 &1772261093
 Prefab:
   m_ObjectHideFlags: 0
@@ -456,30 +432,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8f385a5f6b06a6040926ce307cd1e81f, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &2009674737 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1713781036754730, guid: 0f8a471e5537f864ebdb454fe82308eb,
-    type: 2}
-  m_PrefabInternal: {fileID: 1294543783}
---- !u!114 &2009674738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2009674737}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90765e71b190d1a47aaaf160893785a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 100
-  armor: 0
-  attackPower: 10
-  attackSpeed: 60
-  moveSpeed: 10
-  isAlive: 1
-  bulletPrefab: {fileID: 0}
-  bulletSpawn: {fileID: 0}
 --- !u!1001 &2024862978
 Prefab:
   m_ObjectHideFlags: 0
@@ -522,10 +474,6 @@ Prefab:
     - target: {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
       propertyPath: m_Name
       value: Impling (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
-      propertyPath: m_TagString
-      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
