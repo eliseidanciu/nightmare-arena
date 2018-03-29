@@ -158,13 +158,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4788319935855200}
-  - component: {fileID: 114489361866395698}
   - component: {fileID: 54332811215803438}
   - component: {fileID: 136046382811059246}
   - component: {fileID: 95808891439447968}
+  - component: {fileID: 114948338490426218}
   m_Layer: 0
   m_Name: StoneMonster
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,7 +535,7 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114489361866395698
+--- !u!114 &114948338490426218
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -543,10 +543,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1713781036754730}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a8eeb9411d2d4e4180ec70be187c615, type: 3}
+  m_Script: {fileID: 11500000, guid: 90765e71b190d1a47aaaf160893785a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
+  hp: 100
+  armor: 1
+  attackPower: 10
+  attackSpeed: 60
+  moveSpeed: 10
+  isAlive: 1
+  bulletPrefab: {fileID: 0}
+  bulletSpawn: {fileID: 0}
 --- !u!136 &136046382811059246
 CapsuleCollider:
   m_ObjectHideFlags: 1

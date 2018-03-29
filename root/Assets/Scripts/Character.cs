@@ -45,9 +45,8 @@ public abstract class Character : MonoBehaviour
 
     public virtual void TakeDamage(float enemyAttackPower)
     {
-        animator.Play("TakeDamage");
-        float damage = enemyAttackPower / 100 * armor;
-        hp = hp - damage;
+        float damage = enemyAttackPower / armor * 10;
+        hp -= damage;
         if(hp <= 0)
         {
             Die();
@@ -56,10 +55,9 @@ public abstract class Character : MonoBehaviour
 
     public virtual void Die()
     {
-        animator.Play("Die");
         isAlive = false;
             Destroy(gameObject);
-            Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
+            //Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
             Destroy(deathParticles, 1f);
         
     }
@@ -71,6 +69,7 @@ public abstract class Character : MonoBehaviour
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("CloseRangedAttack");
             var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
+            newBullet.attacker = this;
         }
     }
 
