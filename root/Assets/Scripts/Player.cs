@@ -20,7 +20,7 @@ public class Player : Character
         CameraFollow();
         if(Input.GetKeyDown(KeyCode.Mouse0))
         {
-            CloseRangedAttack();
+            LongRangedAttack();
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {

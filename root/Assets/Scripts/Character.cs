@@ -62,12 +62,12 @@ public abstract class Character : MonoBehaviour
         
     }
 
-    public virtual void CloseRangedAttack()
+    public virtual void LongRangedAttack()
     {
         if (Time.time > nextAttackTime)
         {
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
-            animator.SetTrigger("CloseRangedAttack");
+            animator.SetTrigger("LongRangedAttack");
             var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
             newBullet.attacker = this;
         }
@@ -76,11 +76,10 @@ public abstract class Character : MonoBehaviour
     public abstract void Move();
 
     
-    public virtual void LongRangedAttack()
+    public virtual void ShortRangedAttack()
     {
         if (Time.time > nextAttackTime)
         {
-            animator.SetTrigger("LongRangedAttack");
             
             
         }
