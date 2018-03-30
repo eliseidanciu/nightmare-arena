@@ -17,6 +17,7 @@ public class Player : Character
     void Update()
     {
         Move();
+        Animate();
         CameraFollow();
       
 
@@ -48,17 +49,20 @@ public class Player : Character
 
     public override void Move()
     {
-        //Modifica Leo
-        if (Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d"))
-        {
-            animator.SetTrigger("Move");
-        }
-
-
-
-      
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         Vector3 moveVelocity = moveInput.normalized * moveSpeed;
         controller.Move(moveVelocity);
+    }
+
+    public void Animate()
+    {
+        if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        {
+            animator.SetTrigger("Move");
+        }
+        else
+        {
+            animator.SetTrigger("ExitWalk");
+        }
     }
 }
