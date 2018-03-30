@@ -11,8 +11,12 @@ public abstract class Character : MonoBehaviour
     public float attackSpeed; //hits per minute
     public float moveSpeed;
     public bool isAlive;
+
     public Bullet bulletPrefab;
     public Transform bulletSpawn;
+
+    public Explosion explosionPrefab;
+    public Transform explosionSpawn;
 
     protected float nextRangedAttackTime;
     protected float nextCloseAttackTime;
@@ -81,8 +85,15 @@ public abstract class Character : MonoBehaviour
             float msBetweenAttacks = 60 / attackSpeed * 1000 * 10;
             nextCloseAttackTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("CloseRangedAttack");
+            Invoke("AttackExplosion", .8f);
         }
 
+    }
+
+    private void AttackExplosion()
+    {
+        var explosion = Instantiate(explosionPrefab, explosionSpawn.position, explosionSpawn.rotation);
+        explosion.attacker = this;
     }
 
     private void PropertyValidation(float minValue, float maxValue, out float value, float desiredValue)
