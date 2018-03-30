@@ -9,7 +9,6 @@ public class Bullet : MonoBehaviour {
     public Character attacker;
     Rigidbody rb;
 
-	// Use this for initialization
 	void Start () {
         speed = 50;
         lifeTime = 3f;
@@ -17,7 +16,6 @@ public class Bullet : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
 	}
 	
-	// Update is called once per frame
 	void Update () {
         rb.velocity = transform.forward * speed;
     }
