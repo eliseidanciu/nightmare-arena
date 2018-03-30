@@ -14,8 +14,8 @@ public abstract class Character : MonoBehaviour
     public Bullet bulletPrefab;
     public Transform bulletSpawn;
 
-    protected float msBetweenAttacks;
-    protected float nextAttackTime;
+    protected float nextRangedAttackTime;
+    protected float nextCloseAttackTime;
 
     protected Animator animator;
     protected GameObject deathParticles;
@@ -29,7 +29,6 @@ public abstract class Character : MonoBehaviour
         attackSpeed = 60f;
         moveSpeed = 10f;
         isAlive = true;
-        msBetweenAttacks = 60 / attackSpeed * 1000;
     }
 
     public Character(float _hp, float _armor, float _attackPower, float _attackSpeed, float _moveSpeed, bool _isAlive)
@@ -40,7 +39,6 @@ public abstract class Character : MonoBehaviour
         PropertyValidation(30f, 100f, out attackSpeed, _attackSpeed);
         PropertyValidation(3f, 20f, out moveSpeed, _moveSpeed);
         isAlive = _isAlive;
-        msBetweenAttacks = (60 / attackSpeed) * 1000;
     }
 
     public virtual void TakeDamage(float enemyAttackPower)
@@ -64,9 +62,10 @@ public abstract class Character : MonoBehaviour
 
     public virtual void LongRangedAttack()
     {
-        if (Time.time > nextAttackTime)
+        if (Time.time > nextRangedAttackTime)
         {
-            nextAttackTime = Time.time + (msBetweenAttacks / 1000);
+            float msBetweenAttacks = 60 / attackSpeed * 1000;
+            nextRangedAttackTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("LongRangedAttack");
             var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
             newBullet.attacker = this;
@@ -76,12 +75,13 @@ public abstract class Character : MonoBehaviour
     public abstract void Move();
 
     
-    public virtual void ShortRangedAttack()
+    public virtual void CloseRangedAttack()
     {
-        if (Time.time > nextAttackTime)
+        if (Time.time > nextCloseAttackTime)
         {
-            
-            
+            float msBetweenAttacks = 60 / attackSpeed * 1000 * 10;
+            nextCloseAttackTime = Time.time + (msBetweenAttacks / 1000);
+            animator.SetTrigger("CloseRangedAttack");
         }
 
     }
