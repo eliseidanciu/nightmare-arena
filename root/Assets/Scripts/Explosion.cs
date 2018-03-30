@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Explosion : MonoBehaviour {
-    public GameObject particles;
+    public GameObject[] particles;
     public Character attacker;
 
     float lifeTime;
@@ -13,22 +13,27 @@ public class Explosion : MonoBehaviour {
     {
         lifeTime = 3f;
         damageMultiplier = 5;
-        Instantiate(particles, transform.position, transform.rotation);
-        //Destroy(gameObject, lifeTime);
-        //Destroy(particles, lifeTime);
+        foreach (var item in particles)
+        {
+            var explosion = Instantiate(item, transform.position, transform.rotation);
+            Destroy(explosion, lifeTime);
+        }
 	}
 	
-	void Update ()
+	void LateUpdate ()
     {
-		
-	}
+        //Destroy(gameObject);
+    }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Enemy"))
         {
             var enemy = other.gameObject.GetComponent<Character>();
             enemy.TakeDamage(attacker.attackPower * damageMultiplier);
+            Debug.Log(enemy.hp);
         }
+        Destroy(gameObject);
+
     }
 }
