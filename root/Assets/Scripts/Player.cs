@@ -21,7 +21,7 @@ public class Player : Character
         Animate();
         CameraFollow();
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !animator.GetCurrentAnimatorStateInfo(0).IsName("CloseRangedAttack"))
         {
             LongRangedAttack();
         }

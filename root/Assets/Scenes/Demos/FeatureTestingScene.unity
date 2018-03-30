@@ -294,6 +294,20 @@ Prefab:
       propertyPath: m_Name
       value: Impling (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705459249808554, guid: a74b8142f61144d368e5dde7c70fe020,
+        type: 2}
+      propertyPath: moveSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114705459249808554, guid: a74b8142f61144d368e5dde7c70fe020,
+        type: 2}
+      propertyPath: isAlive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
   m_IsPrefabParent: 0

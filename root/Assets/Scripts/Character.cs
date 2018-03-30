@@ -73,7 +73,6 @@ public abstract class Character : MonoBehaviour
     }
 
     public abstract void Move();
-
     
     public virtual void CloseRangedAttack()
     {
