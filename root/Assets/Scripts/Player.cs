@@ -16,18 +16,18 @@ public class Player : Character
     
     void Update()
     {
+      
         Move();
         Animate();
         CameraFollow();
-      
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !animator.GetCurrentAnimatorStateInfo(0).IsName("CloseRangedAttack"))
         {
             LongRangedAttack();
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            LongRangedAttack();
+            CloseRangedAttack();
         }
       
     }
@@ -41,8 +41,6 @@ public class Player : Character
         if (groundPlane.Raycast(ray, out rayDistance))
         {
             Vector3 point = ray.GetPoint(rayDistance);
-            //Debug.DrawLine(ray.origin, point, Color.red);
-            //Debug.DrawRay(ray.origin,ray.direction * 100,Color.red);
             controller.LookAt(point);
         }
     }
@@ -51,6 +49,11 @@ public class Player : Character
     {
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         Vector3 moveVelocity = moveInput.normalized * moveSpeed;
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("CloseRangedAttack"))
+        {
+            moveVelocity = Vector3.zero;
+        }
         controller.Move(moveVelocity);
     }
 
