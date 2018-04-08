@@ -3498,47 +3498,12 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 54428490805029958, guid: 607517f5d9707e442b9beef8a79fd5c7,
+    - target: {fileID: 198292799610517370, guid: 607517f5d9707e442b9beef8a79fd5c7,
         type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54428490805029958, guid: 607517f5d9707e442b9beef8a79fd5c7,
+      propertyPath: LightsModule.light
+      value: 
+      objectReference: {fileID: 108000013609061350, guid: fa35d75604d172d48b7a6b62a07c7dbf,
         type: 2}
-      propertyPath: m_Constraints
-      value: 116
-      objectReference: {fileID: 0}
-    - target: {fileID: 198039333204808006, guid: 607517f5d9707e442b9beef8a79fd5c7,
-        type: 2}
-      propertyPath: TrailModule.enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 198039333204808006, guid: 607517f5d9707e442b9beef8a79fd5c7,
-        type: 2}
-      propertyPath: randomSeed
-      value: -1180867648
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216230114089430, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 0.33285323
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216230114089430, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 0.3267918
-      objectReference: {fileID: 0}
-    - target: {fileID: 4216230114089430, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 0.15430032
-      objectReference: {fileID: 0}
-    - target: {fileID: 198039333204808006, guid: 607517f5d9707e442b9beef8a79fd5c7,
-        type: 2}
-      propertyPath: ShapeModule.radius.value
-      value: 0.9207618
-      objectReference: {fileID: 0}
-    - target: {fileID: 4803218499028830, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 48.596
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
   m_IsPrefabParent: 0
