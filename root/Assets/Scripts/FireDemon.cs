@@ -14,8 +14,10 @@ public class FireDemon : Enemy {
         base.Update();
     }
 
-    public override void Move()
+    public override void Attack()
     {
-
+        
     }
+
+    
 }

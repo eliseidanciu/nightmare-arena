@@ -7,7 +7,8 @@ using UnityEngine.AI;
 public abstract class Enemy : Character
 { 
     protected NavMeshAgent pathfinder;
-    protected Transform target;
+    protected Character target;
+
 
     private void Awake()
     {
@@ -17,25 +18,37 @@ public abstract class Enemy : Character
 
     protected void Start ()
     {
-        target = GameObject.FindGameObjectWithTag("Player").transform;
+        base.Start();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
         StartCoroutine(UpdatePath());
 	}
 
     protected void Update()
     {
-        transform.LookAt(target);
+        transform.LookAt(target.transform);
     }
-    
 
+    public override void Move()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            rb.velocity = Vector3.zero;
+        }
+    }
+
+    /*
+     * This function updates the enemies' path toward their target
+     */
     IEnumerator UpdatePath()
     {
         float refreshRate = .25f;
 
         while (target != null)
         {
-            Vector3 targetPosition = new Vector3(target.position.x, 0, target.position.z);
+            Vector3 targetPosition = new Vector3(target.transform.position.x, 0, target.transform.position.z);
             pathfinder.SetDestination(targetPosition);
             yield return new WaitForSeconds(refreshRate);
         }
     }
+    
 }

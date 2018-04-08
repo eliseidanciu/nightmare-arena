@@ -1,35 +1,58 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(PlayerController), typeof(Camera))]
+[RequireComponent(typeof(Camera))]
 public class Player : Character
 {
     Camera viewCamera;
-    PlayerController controller;
+    Vector3 velocity;
+
+    public Explosion explosionPrefab;
+    public Transform explosionSpawn;
+
+    protected float nextSkillTime;
 
     void Start()
     {
-        controller = GetComponent<PlayerController>();
+        base.Start();
         viewCamera = Camera.main;
-        animator = GetComponent<Animator>();
+        Move();
     }
     
     void Update()
     {
-      
+
         Move();
         Animate();
         CameraFollow();
 
         if (Input.GetKeyDown(KeyCode.Mouse0) && !animator.GetCurrentAnimatorStateInfo(0).IsName("CloseRangedAttack"))
         {
-            LongRangedAttack();
+            Attack();
         }
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
-            CloseRangedAttack();
+            SpecialAttack();
         }
       
+    }
+
+    public void FixedUpdate()
+    {
+        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+
+    }
+
+    public override void Move()
+    {
+        Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        Vector3 moveVelocity = moveInput.normalized * moveSpeed;
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("MeleeAttack"))
+        {
+            moveVelocity = Vector3.zero;
+        }
+        velocity = moveVelocity;
     }
 
     public void CameraFollow()
@@ -41,21 +64,10 @@ public class Player : Character
         if (groundPlane.Raycast(ray, out rayDistance))
         {
             Vector3 point = ray.GetPoint(rayDistance);
-            controller.LookAt(point);
+            LookAt(point);
         }
     }
 
-    public override void Move()
-    {
-        Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        Vector3 moveVelocity = moveInput.normalized * moveSpeed;
-
-        if (animator.GetCurrentAnimatorStateInfo(0).IsName("CloseRangedAttack"))
-        {
-            moveVelocity = Vector3.zero;
-        }
-        controller.Move(moveVelocity);
-    }
 
     public void Animate()
     {
@@ -67,5 +79,41 @@ public class Player : Character
         {
             animator.SetTrigger("ExitWalk");
         }
+    }
+
+    public void SpecialAttack()
+    {
+        if (Time.time > nextSkillTime)
+        {
+            float msBetweenAttacks = 60 / attackSpeed * 1000 * 10;
+            nextSkillTime = Time.time + (msBetweenAttacks / 1000);
+            animator.SetTrigger("MeleeAttack");
+            Invoke("Explosion", .8f);
+        }
+
+    }
+
+    public override void Attack()
+    {
+        if (Time.time > nextAttackTime)
+        {
+            float msBetweenAttacks = 60 / attackSpeed * 1000;
+            nextAttackTime = Time.time + (msBetweenAttacks / 1000);
+            animator.SetTrigger("RangedAttack");
+            var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
+            newBullet.attacker = this;
+        }
+    }
+
+    private void Explosion()
+    {
+        var explosion = Instantiate(explosionPrefab, explosionSpawn.position, explosionSpawn.rotation);
+        explosion.attacker = this;
+    }
+
+    public void LookAt(Vector3 lookPoint)
+    {
+        Vector3 heightCorrectedPoint = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
+        transform.LookAt(heightCorrectedPoint);
     }
 }
