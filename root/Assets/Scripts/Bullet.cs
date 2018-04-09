@@ -22,7 +22,13 @@ public class Bullet : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        //Ignore collision with enemies if the attacker was also an enemy
+        if (!(CompareTag("Enemy") && other.CompareTag("Enemy")))
+        {
+            Destroy(gameObject);
+        }
+
+        //Take damage and ignore friendly fire
         if((CompareTag("Enemy") && other.CompareTag("Player")) || (CompareTag("Player") && other.CompareTag("Enemy")))
         {
             var enemy = other.gameObject.GetComponent<Character>();
