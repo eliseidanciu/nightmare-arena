@@ -40,7 +40,6 @@ public class Player : Character
     public void FixedUpdate()
     {
         rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
-
     }
 
     public override void Move()

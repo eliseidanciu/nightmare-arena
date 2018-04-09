@@ -127,7 +127,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4803218499028830, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 9.38
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 4803218499028830, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -135,7 +135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4803218499028830, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 4.02
+      value: 11.87
       objectReference: {fileID: 0}
     - target: {fileID: 4803218499028830, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -160,51 +160,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &209336171 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 455730, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
-  m_PrefabInternal: {fileID: 1256148511}
---- !u!1 &432407823
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 432407824}
-  - component: {fileID: 432407825}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &432407824
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 432407823}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03, y: 0, z: 3.89}
-  m_LocalScale: {x: 8.88638, y: 8.886367, z: 8.886367}
-  m_Children: []
-  m_Father: {fileID: 209336171}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!135 &432407825
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 432407823}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &790238276
 Prefab:
   m_ObjectHideFlags: 0
@@ -252,7 +207,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ddea47312fd6ef94ea8ccec38c93d96c, type: 2}
   m_IsPrefabParent: 0
---- !u!1001 &1256148511
+--- !u!1001 &1260547504
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -261,7 +216,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 455730, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -21.59
+      value: 6.88
       objectReference: {fileID: 0}
     - target: {fileID: 455730, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
       propertyPath: m_LocalPosition.y
@@ -269,7 +224,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 455730, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 15.75
+      value: 6.61
       objectReference: {fileID: 0}
     - target: {fileID: 455730, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
       propertyPath: m_LocalRotation.x
@@ -294,25 +249,6 @@ Prefab:
     - target: {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
       propertyPath: m_Name
       value: Impling (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 54708442927503668, guid: a74b8142f61144d368e5dde7c70fe020,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 195637181279771042, guid: a74b8142f61144d368e5dde7c70fe020,
-        type: 2}
-      propertyPath: m_Acceleration
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114705459249808554, guid: a74b8142f61144d368e5dde7c70fe020,
-        type: 2}
-      propertyPath: attackSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 138910, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a74b8142f61144d368e5dde7c70fe020, type: 2}
@@ -364,16 +300,6 @@ Prefab:
     - target: {fileID: 1713781036754730, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 2}
       propertyPath: m_Name
       value: FireDemon
-      objectReference: {fileID: 0}
-    - target: {fileID: 114948338490426218, guid: 0f8a471e5537f864ebdb454fe82308eb,
-        type: 2}
-      propertyPath: attackSpeed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 195904544890129604, guid: 0f8a471e5537f864ebdb454fe82308eb,
-        type: 2}
-      propertyPath: m_Acceleration
-      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 2}

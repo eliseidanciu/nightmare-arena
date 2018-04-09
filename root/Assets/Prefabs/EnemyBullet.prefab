@@ -21,12 +21,11 @@ GameObject:
   - component: {fileID: 4583194519273314}
   - component: {fileID: 33333170030159990}
   - component: {fileID: 65085333236031600}
-  - component: {fileID: 23642199503209432}
   - component: {fileID: 114398917387943650}
   - component: {fileID: 54494854316996200}
   m_Layer: 0
   m_Name: EnemyBullet
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +73,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4999850197881674}
   - component: {fileID: 33132315493562266}
-  - component: {fileID: 135746235737267894}
   - component: {fileID: 23765664985004892}
   m_Layer: 0
   m_Name: Sphere
@@ -149,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1617533935903994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.067709, y: 4.23, z: 4.2134356}
+  m_LocalPosition: {x: -13.950233, y: 1.6623584e-17, z: 47.688835}
   m_LocalScale: {x: 0.47000015, y: 0.47000015, z: 0.47000015}
   m_Children:
   - {fileID: 4619627147957156}
@@ -179,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 1978975249317208}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 4266559785437600}
   - {fileID: 4581745829888944}
@@ -199,40 +197,6 @@ Transform:
   m_Father: {fileID: 4583194519273314}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23642199503209432
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1617533935903994}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
 --- !u!23 &23765664985004892
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -294,8 +258,8 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 4
-  m_CollisionDetection: 1
+  m_Constraints: 116
+  m_CollisionDetection: 2
 --- !u!65 &65085333236031600
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -355,19 +319,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2aa9ae71cdf3b0f4a870373153d5123d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 20
+  lifeTime: 4
   attacker: {fileID: 0}
---- !u!135 &135746235737267894
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1955691384036844}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198343450895659600
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -428,7 +382,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -1541506699
+  randomSeed: 769225568
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6958,7 +6912,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -885719393
+  randomSeed: 976537328
   InitialModule:
     serializedVersion: 3
     enabled: 1

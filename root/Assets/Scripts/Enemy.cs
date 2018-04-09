@@ -27,7 +27,10 @@ public abstract class Enemy : Character
 
     protected void Update()
     {
-        transform.LookAt(target.transform);
+        if(target != null)
+        {
+            transform.LookAt(target.transform);
+        }
     }
 
     public override void Move()

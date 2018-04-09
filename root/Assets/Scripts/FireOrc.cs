@@ -24,7 +24,6 @@ public class FireOrc : Enemy {
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
             //animator.SetTrigger("Attack");
             target.TakeDamage(attackPower);
-            Debug.Log(target.hp);
         }
     }
 

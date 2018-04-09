@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +26,6 @@ public class Stats : MonoBehaviour //Character
 	// Update is called once per frame
 	void LateUpdate () {
         riempimento = oggetto.hp / 100;
-        Debug.Log(oggetto.hp);
         Barra_vita();
 	}
 
