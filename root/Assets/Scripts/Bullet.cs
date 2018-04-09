@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         Destroy(gameObject);
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player"))
+        if((CompareTag("Enemy") && other.CompareTag("Player")) || (CompareTag("Player") && other.CompareTag("Enemy")))
         {
             var enemy = other.gameObject.GetComponent<Character>();
             enemy.TakeDamage(attacker.attackPower);
