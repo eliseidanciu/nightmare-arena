@@ -7,6 +7,7 @@ public class FireOrc : Enemy {
     void Start()
     {
         base.Start();
+        attackDistance = 7f;
     }
 
     void Update()
@@ -17,8 +18,7 @@ public class FireOrc : Enemy {
 
     public override void Attack()
     {
-        float distance = Vector3.Distance(transform.position, target.transform.position);
-        if (distance < 7 && Time.time > nextAttackTime)       
+        if (distanceFromTarget < attackDistance && Time.time > nextAttackTime)       
         {
             float msBetweenAttacks = 60 / attackSpeed * 1000;
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);

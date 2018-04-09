@@ -8,6 +8,8 @@ public abstract class Enemy : Character
 { 
     protected NavMeshAgent pathfinder;
     protected Character target;
+    protected float distanceFromTarget;
+    protected float attackDistance;
 
 
     private void Awake()
@@ -21,7 +23,7 @@ public abstract class Enemy : Character
         base.Start();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
         StartCoroutine(UpdatePath());
-	}
+    }
 
     protected void Update()
     {
@@ -47,6 +49,7 @@ public abstract class Enemy : Character
         {
             Vector3 targetPosition = new Vector3(target.transform.position.x, 0, target.transform.position.z);
             pathfinder.SetDestination(targetPosition);
+            distanceFromTarget = Vector3.Distance(transform.position, target.transform.position);
             yield return new WaitForSeconds(refreshRate);
         }
     }

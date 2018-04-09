@@ -89,6 +89,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1454093924276334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4384033899197592}
+  m_Layer: 0
+  m_Name: BulletSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1467097521789780
 GameObject:
   m_ObjectHideFlags: 1
@@ -169,7 +184,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1753159918419610
 GameObject:
   m_ObjectHideFlags: 1
@@ -322,6 +337,19 @@ Transform:
   m_Father: {fileID: 4966007699546920}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -96.706345}
+--- !u!4 &4384033899197592
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1454093924276334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4788319935855200}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4574649352997690
 Transform:
   m_ObjectHideFlags: 1
@@ -348,6 +376,7 @@ Transform:
   m_Children:
   - {fileID: 4966007699546920}
   - {fileID: 4244191954350522}
+  - {fileID: 4384033899197592}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -553,10 +582,10 @@ MonoBehaviour:
   attackSpeed: 60
   moveSpeed: 10
   isAlive: 1
-  bulletPrefab: {fileID: 0}
-  bulletSpawn: {fileID: 0}
-  explosionPrefab: {fileID: 0}
-  explosionSpawn: {fileID: 0}
+  bulletPrefab: {fileID: 114398917387943650, guid: 522072f71d4aa564aa5dde1c74258733,
+    type: 2}
+  bulletSpawn: {fileID: 4384033899197592}
+  deathParticles: {fileID: 0}
 --- !u!136 &136046382811059246
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -633,7 +662,7 @@ NavMeshAgent:
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 10
-  m_Acceleration: 20
+  m_Acceleration: 100
   avoidancePriority: 50
   m_AngularSpeed: 100
   m_StoppingDistance: 30

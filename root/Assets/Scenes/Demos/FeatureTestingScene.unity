@@ -127,7 +127,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4803218499028830, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 9.38
       objectReference: {fileID: 0}
     - target: {fileID: 4803218499028830, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
       propertyPath: m_LocalPosition.y
@@ -135,7 +135,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4803218499028830, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 8
+      value: 4.02
       objectReference: {fileID: 0}
     - target: {fileID: 4803218499028830, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
       propertyPath: m_LocalRotation.x
@@ -364,6 +364,16 @@ Prefab:
     - target: {fileID: 1713781036754730, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 2}
       propertyPath: m_Name
       value: FireDemon
+      objectReference: {fileID: 0}
+    - target: {fileID: 114948338490426218, guid: 0f8a471e5537f864ebdb454fe82308eb,
+        type: 2}
+      propertyPath: attackSpeed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 195904544890129604, guid: 0f8a471e5537f864ebdb454fe82308eb,
+        type: 2}
+      propertyPath: m_Acceleration
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f8a471e5537f864ebdb454fe82308eb, type: 2}
