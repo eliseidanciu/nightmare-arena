@@ -4,29 +4,45 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class Bullet : MonoBehaviour {
-    float speed;
-    float lifeTime;
+    public float speed;
+    public float lifeTime;
+
     public Character attacker;
     Rigidbody rb;
 
 	void Start () {
-        speed = 50;
-        lifeTime = 3f;
         Destroy(gameObject, lifeTime);
         rb = GetComponent<Rigidbody>();
 	}
 	
-	void Update () {
+	void FixedUpdate () {
         rb.velocity = transform.forward * speed;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
-        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Player"))
+        
+        if(attacker != null && other != null)
         {
-            var enemy = other.gameObject.GetComponent<Character>();
-            enemy.TakeDamage(attacker.attackPower);
+
+            //Ignore collision with enemies if the attacker was also an enemy or the bullets collides with another bullet
+            if (!(other.CompareTag("Enemy") && attacker.CompareTag("Enemy")) && !(other.CompareTag("Bullet")))
+            {
+                Destroy(gameObject);
+            }
+
+            //Cause damage to the target making sure to ignore friendly fire
+            if ((attacker.CompareTag("Enemy") && other.CompareTag("Player")) || (attacker.CompareTag("Player") && other.CompareTag("Enemy")))
+            {
+                var enemy = other.gameObject.GetComponent<Character>();
+                enemy.TakeDamage(attacker.attackPower);
+                Debug.Log(enemy.name + ": " + enemy.hp + "left");
+            }
+
+            
         }
+        
+
+        
     }
 }

@@ -25,7 +25,6 @@ public class Explosion : MonoBehaviour {
         {
             var enemy = other.gameObject.GetComponent<Character>();
             enemy.TakeDamage(attacker.attackPower * damageMultiplier);
-            Debug.Log(enemy.hp);
         }
         Destroy(gameObject);
 
