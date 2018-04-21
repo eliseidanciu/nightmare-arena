@@ -9,7 +9,8 @@ public class Stats : MonoBehaviour //Character
 
 
     public Character oggetto;
-
+    public Text punteggio;
+    public FireOrc mostro;
 
    private float riempimento;
 
@@ -25,6 +26,7 @@ public class Stats : MonoBehaviour //Character
 	
 	// Update is called once per frame
 	void LateUpdate () {
+
         riempimento = oggetto.hp / 100;
         Debug.Log(oggetto.hp);
         Barra_vita();

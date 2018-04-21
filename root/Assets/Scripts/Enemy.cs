@@ -13,6 +13,8 @@ public abstract class Enemy : Character
     {
         pathfinder = GetComponent<NavMeshAgent>();
         pathfinder.speed = moveSpeed;
+
+        
     }
 
     protected void Start ()
