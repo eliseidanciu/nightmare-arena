@@ -84,7 +84,7 @@ public class Player : Character
     {
         if (Time.time > nextSkillTime)
         {
-            float msBetweenAttacks = 60 / attackSpeed * 1000 * 10;
+            float msBetweenAttacks = 60 / attackSpeed * 1000 * 20;
             nextSkillTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("MeleeAttack");
             Invoke("Explosion", .8f);
