@@ -106,7 +106,7 @@ ModelImporter:
     4300002: Object011
     7400000: Bip001|Bip001Action
     7400002: Bip001|Bip001Action.001
-    7400004: Bip001|Bip001Action.002
+    7400004: OrcDeath
     7400006: Die
     9500000: //RootNode
     13700000: Object010
@@ -139,7 +139,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Bip001|Bip001Action.002
+      name: OrcDeath
       takeName: Bip001|Bip001Action.002
       firstFrame: 0
       lastFrame: 60

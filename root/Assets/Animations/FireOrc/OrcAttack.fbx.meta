@@ -109,7 +109,7 @@ ModelImporter:
     2100000: 01 - Default
     4300000: Object010
     4300002: Object011
-    7400000: Attack
+    7400000: OrcAttack
     9500000: //RootNode
     10800000: Lamp
     13700000: Object010
@@ -142,7 +142,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Attack
+      name: OrcAttack
       takeName: Bip001|Bip001Action
       firstFrame: 0
       lastFrame: 29
