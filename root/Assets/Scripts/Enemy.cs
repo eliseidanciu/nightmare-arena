@@ -29,7 +29,10 @@ public abstract class Enemy : Character
 
     protected void Update()
     {
-        
+        if(!isAlive)
+        {
+            pathfinder.speed = 0f;
+        }
     }
 
     public override void Move()
@@ -49,7 +52,7 @@ public abstract class Enemy : Character
     {
         float refreshRate = .25f;
 
-        while (target != null)
+        while (target != null && isAlive)
         {
             Vector3 targetPosition = new Vector3(target.transform.position.x, 0, target.transform.position.z);
             pathfinder.SetDestination(targetPosition);

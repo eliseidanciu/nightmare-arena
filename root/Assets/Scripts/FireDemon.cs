@@ -12,10 +12,14 @@ public class FireDemon : Enemy {
 
     void Update()
     {
-        Attack();
-        if (target != null)
+        if (isAlive)
         {
-            transform.LookAt(target.transform);
+            base.Update();
+            Attack();
+            if(target)
+            {
+                transform.LookAt(target.transform);
+            }
         }
     }
 
@@ -26,10 +30,22 @@ public class FireDemon : Enemy {
             float msBetweenAttacks = 60 / attackSpeed * 1000;
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("Attack");
-            var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
-            newBullet.attacker = this;
+            animator.ResetTrigger("Move");
+            Invoke("SpawnBullet", .4f);
+        }
+        else if (distanceFromTarget < attackDistance && Time.time < nextAttackTime)
+        {
+            animator.SetTrigger("Idle");
+            pathfinder.speed = 0;
+        }
+        else if (distanceFromTarget > attackDistance)
+        {
+            animator.SetTrigger("Move");
+            pathfinder.speed = moveSpeed;
         }
     }
+
+    
 
     
 }

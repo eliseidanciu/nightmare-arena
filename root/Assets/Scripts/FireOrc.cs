@@ -13,8 +13,15 @@ public class FireOrc : Enemy
 
     void Update()
     {
-        base.Update();
-        Attack();
+        if(isAlive)
+        {
+            base.Update();
+            Attack();
+        }
+        else
+        {
+            pathfinder.speed = 0;
+        }
     }
 
     public override void Attack()

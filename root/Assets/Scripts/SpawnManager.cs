@@ -16,7 +16,7 @@ public class SpawnManager : MonoBehaviour {
     void Start()
     {
         spawnDelay = 5.0f;
-        difficultyMultiplier = 1.2f;
+        difficultyMultiplier = 1.1f;
         timeSinceLastSpawn = 0.0f;
         timeBetweenDifficultyIncrements = 10.0f;
         timeSinceLastDifficultyIncrement = 0.0f;
@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour {
     void IncreaseDifficulty()
     {
         timeSinceLastDifficultyIncrement += Time.deltaTime;
-        if (timeSinceLastDifficultyIncrement >= timeBetweenDifficultyIncrements && spawnDelay >= 1.0f)
+        if (timeSinceLastDifficultyIncrement >= timeBetweenDifficultyIncrements && spawnDelay >= 3.0f)
         {
             spawnDelay /= difficultyMultiplier;
             timeSinceLastDifficultyIncrement = 0.0f;

@@ -91,7 +91,7 @@ public class Player : Character
     {
         if (Time.time > nextSkillTime)
         {
-            float msBetweenAttacks = 60 / attackSpeed * 1000 * 20;
+            float msBetweenAttacks = 60 / attackSpeed * 1000 * 10;
             nextSkillTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("MeleeAttack");
             Invoke("Explosion", .8f);
@@ -106,8 +106,7 @@ public class Player : Character
             float msBetweenAttacks = 60 / attackSpeed * 1000;
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("RangedAttack");
-            var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
-            newBullet.attacker = this;
+            Invoke("SpawnBullet", .2f);
         }
     }
 

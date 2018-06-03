@@ -43,6 +43,12 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    public void SpawnBullet()
+    {
+        var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
+        newBullet.attacker = this;
+    }
+
     public virtual void Die()
     {
         isAlive = false;
