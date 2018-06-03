@@ -58,7 +58,7 @@ public abstract class Character : MonoBehaviour
         Destroy(bodyCollider);
         //Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(deathParticles, 1f);
-        
+
     }
 
 

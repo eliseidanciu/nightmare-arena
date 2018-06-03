@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Camera))]
 public class Player : Character
@@ -9,6 +10,7 @@ public class Player : Character
 
     public Explosion explosionPrefab;
     public Transform explosionSpawn;
+
 
     protected float nextSkillTime;
 
@@ -20,7 +22,9 @@ public class Player : Character
         viewCamera = Camera.main;
         Move();
     }
+
     
+
     void Update()
     {
         if(isAlive)
@@ -38,8 +42,14 @@ public class Player : Character
                 SpecialAttack();
             }
         }
+        else
+        {
+            Invoke("LoadGameOver", 2f);
+        }
       
     }
+
+
 
     public void FixedUpdate()
     {
@@ -48,6 +58,13 @@ public class Player : Character
             rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
         }
     }
+
+    //This should me in LevelManager.cs but cant make it work from there.
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
 
     public override void Move()
     {

@@ -33,4 +33,4 @@ Material:
     - _RotationSpeed: 1
     - __dirty: 1
     m_Colors:
-    - _TintColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+    - _TintColor: {r: 1, g: 0.4168357, b: 0.20689654, a: 1}
