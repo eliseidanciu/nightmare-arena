@@ -12,6 +12,8 @@ public class Player : Character
 
     protected float nextSkillTime;
 
+    Vector3 lastPoint = new Vector3(); //the last point the character was looking at before dying
+
     void Start()
     {
         base.Start();
@@ -21,25 +23,30 @@ public class Player : Character
     
     void Update()
     {
-
-        Move();
-        Animate();
-        CameraFollow();
-
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !animator.GetCurrentAnimatorStateInfo(0).IsName("CloseRangedAttack"))
+        if(isAlive)
         {
-            Attack();
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            SpecialAttack();
+            Move();
+            Animate();
+            CameraFollow();
+
+            if (Input.GetKeyDown(KeyCode.Mouse0) && !animator.GetCurrentAnimatorStateInfo(0).IsName("CloseRangedAttack"))
+            {
+                Attack();
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse1))
+            {
+                SpecialAttack();
+            }
         }
       
     }
 
     public void FixedUpdate()
     {
-        rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+        if(isAlive)
+        {
+            rb.MovePosition(rb.position + velocity * Time.fixedDeltaTime);
+        }
     }
 
     public override void Move()
@@ -113,6 +120,8 @@ public class Player : Character
     public void LookAt(Vector3 lookPoint)
     {
         Vector3 heightCorrectedPoint = new Vector3(lookPoint.x, transform.position.y, lookPoint.z);
-        transform.LookAt(heightCorrectedPoint);
+        transform.LookAt(heightCorrectedPoint);   
     }
+
+    
 }

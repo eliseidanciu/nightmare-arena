@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public abstract class Enemy : Character
-{ 
+{
     protected NavMeshAgent pathfinder;
     protected Character target;
     protected float distanceFromTarget;
@@ -17,10 +17,10 @@ public abstract class Enemy : Character
         pathfinder = GetComponent<NavMeshAgent>();
         pathfinder.speed = moveSpeed;
 
-        
+
     }
 
-    protected void Start ()
+    protected void Start()
     {
         base.Start();
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
@@ -29,18 +29,17 @@ public abstract class Enemy : Character
 
     protected void Update()
     {
-        if(target != null)
-        {
-            transform.LookAt(target.transform);
-        }
+        
     }
 
     public override void Move()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
-            rb.velocity = Vector3.zero;
+            pathfinder.speed = 0;
         }
+
+
     }
 
     /*
@@ -58,5 +57,5 @@ public abstract class Enemy : Character
             yield return new WaitForSeconds(refreshRate);
         }
     }
-    
+
 }

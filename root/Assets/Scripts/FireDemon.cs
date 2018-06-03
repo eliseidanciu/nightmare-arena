@@ -12,8 +12,11 @@ public class FireDemon : Enemy {
 
     void Update()
     {
-        base.Update();
         Attack();
+        if (target != null)
+        {
+            transform.LookAt(target.transform);
+        }
     }
 
     public override void Attack()
@@ -22,7 +25,7 @@ public class FireDemon : Enemy {
         {
             float msBetweenAttacks = 60 / attackSpeed * 1000;
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
-            //animator.SetTrigger("Attack");
+            animator.SetTrigger("Attack");
             var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
             newBullet.attacker = this;
         }

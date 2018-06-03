@@ -19,21 +19,24 @@ public abstract class Character : MonoBehaviour
     protected float nextAttackTime;
     protected Rigidbody rb;
     protected Animator animator;
+    protected CapsuleCollider bodyCollider;
 
 
-    public abstract void Attack();
     public abstract void Move();
+    public abstract void Attack();
 
     protected void Start()
     {
         rb = GetComponent<Rigidbody>();
         animator = GetComponent<Animator>();
+        bodyCollider = GetComponent<CapsuleCollider>();
     }
 
     public virtual void TakeDamage(float enemyAttackPower)
     {
         float damage = enemyAttackPower / armor * 10;
         hp -= damage;
+        Debug.Log(hp + "hp");
         if(hp <= 0)
         {
             Die();
@@ -43,7 +46,10 @@ public abstract class Character : MonoBehaviour
     public virtual void Die()
     {
         isAlive = false;
-        Destroy(gameObject);
+        animator.SetTrigger("Die");
+        moveSpeed = 0;
+        Destroy(gameObject, 3f);
+        Destroy(bodyCollider);
         //Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(deathParticles, 1f);
         

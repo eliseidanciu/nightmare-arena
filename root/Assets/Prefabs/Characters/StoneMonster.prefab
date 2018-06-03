@@ -580,7 +580,7 @@ MonoBehaviour:
   armor: 2
   attackPower: 10
   attackSpeed: 20
-  moveSpeed: 10
+  moveSpeed: 12
   isAlive: 1
   bulletPrefab: {fileID: 114398917387943650, guid: 522072f71d4aa564aa5dde1c74258733,
     type: 2}
