@@ -1504,7 +1504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 100
-  armor: 5
+  armor: 2.5
   attackPower: 10
   attackSpeed: 20
   moveSpeed: 10

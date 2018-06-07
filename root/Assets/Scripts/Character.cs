@@ -51,6 +51,7 @@ public abstract class Character : MonoBehaviour
 
     public virtual void Die()
     {
+        SyncScore();   
         isAlive = false;
         animator.SetTrigger("Die");
         moveSpeed = 0;
@@ -59,6 +60,20 @@ public abstract class Character : MonoBehaviour
         //Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
         Destroy(deathParticles, 1f);
 
+    }
+
+    public void SyncScore()
+    {
+        const int DEMON_SCORE = 1;
+        const int ORC_SCORE = 2;
+        if (GetComponent<FireDemon>())
+        {
+            ScoreManager.score += DEMON_SCORE;
+        }
+        else if(GetComponent<FireOrc>())
+        {
+            ScoreManager.score += ORC_SCORE;
+        }
     }
 
 
