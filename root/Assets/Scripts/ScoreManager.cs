@@ -10,6 +10,8 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
     public static int score;
+    public static int DEMON_SCORE = 1;
+    public static int ORC_SCORE = 2;
     int highScore;
 
     GameObject scoreObj;

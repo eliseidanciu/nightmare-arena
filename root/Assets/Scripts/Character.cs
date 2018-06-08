@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent (typeof(Animator), typeof(Rigidbody))]
 public abstract class Character : MonoBehaviour
@@ -11,7 +12,10 @@ public abstract class Character : MonoBehaviour
     public float attackSpeed; //hits per minute
     public float moveSpeed;
     public bool isAlive;
+    const float orcMagic = 0.1f;
+    const float demonMagic = 0.2f;
 
+    public Image magic;
     public Bullet bulletPrefab;
     public Transform bulletSpawn;
     public GameObject deathParticles;
@@ -64,17 +68,24 @@ public abstract class Character : MonoBehaviour
 
     public void SyncScore()
     {
-        const int DEMON_SCORE = 1;
-        const int ORC_SCORE = 2;
         if (GetComponent<FireDemon>())
         {
-            ScoreManager.score += DEMON_SCORE;
+            IncreaseMagicBy(demonMagic);
+            ScoreManager.score += ScoreManager.DEMON_SCORE;
         }
         else if(GetComponent<FireOrc>())
         {
-            ScoreManager.score += ORC_SCORE;
+            IncreaseMagicBy(orcMagic);
+            ScoreManager.score += ScoreManager.ORC_SCORE;
         }
     }
+
+    public void IncreaseMagicBy(float amount)
+    {
+        Player player = FindObjectOfType<Player>();
+        player.magic.fillAmount += amount;
+    }
+    
 
 
 }

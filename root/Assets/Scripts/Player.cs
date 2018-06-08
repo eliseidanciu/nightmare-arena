@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
+
+
 [RequireComponent(typeof(Camera))]
 public class Player : Character
 {
@@ -27,7 +29,7 @@ public class Player : Character
 
     void Update()
     {
-        if(isAlive)
+        if (isAlive)
         {
             Move();
             Animate();
@@ -106,15 +108,15 @@ public class Player : Character
 
     public void SpecialAttack()
     {
-        if (Time.time > nextSkillTime)
+        if (magic.fillAmount >= 1.0f)
         {
-            float msBetweenAttacks = 60 / attackSpeed * 1000 * 10;
-            nextSkillTime = Time.time + (msBetweenAttacks / 1000);
+            magic.fillAmount = 0.0f;
             animator.SetTrigger("MeleeAttack");
             Invoke("Explosion", .8f);
         }
 
     }
+    
 
     public override void Attack()
     {

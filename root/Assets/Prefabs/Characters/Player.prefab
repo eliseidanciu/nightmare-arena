@@ -1491,7 +1491,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1014253943818482}
-  m_LocalRotation: {x: -0, y: 0.4114824, z: -0, w: 0.9114178}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 14, y: 0.24, z: -16}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
@@ -1507,7 +1507,7 @@ Transform:
   - {fileID: 4905862917671290}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 48.596, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4826131746537062
 Transform:
   m_ObjectHideFlags: 1
@@ -1576,7 +1576,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1918762919610644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.2, z: 1.89}
+  m_LocalPosition: {x: 0, y: 0.2, z: 2.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4803218499028830}
@@ -1795,6 +1795,7 @@ MonoBehaviour:
   attackSpeed: 70
   moveSpeed: 15
   isAlive: 1
+  magic: {fileID: 0}
   bulletPrefab: {fileID: 114398917387943650, guid: f280f9b2583e9694f8435959285d914e,
     type: 2}
   bulletSpawn: {fileID: 4124670959616778}
