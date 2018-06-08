@@ -194,49 +194,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114472429613941692, guid: 607517f5d9707e442b9beef8a79fd5c7,
+        type: 2}
+      propertyPath: hp
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 607517f5d9707e442b9beef8a79fd5c7, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &339744975
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 339744976}
-  - component: {fileID: 339744977}
-  m_Layer: 0
-  m_Name: ScoreManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &339744976
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 339744975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.755307, y: -0.66879034, z: -90.38682}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &339744977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 339744975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 372f5aaf398165a42a06b892a6c8b68c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &507892040
 Prefab:
   m_ObjectHideFlags: 0
@@ -1252,6 +1217,53 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1936392838}
+--- !u!1001 &1966068034
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4597815498592638, guid: 90547458deeff0e4286f959183522e59, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 14.755307
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597815498592638, guid: 90547458deeff0e4286f959183522e59, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.66879034
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597815498592638, guid: 90547458deeff0e4286f959183522e59, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -90.38682
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597815498592638, guid: 90547458deeff0e4286f959183522e59, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597815498592638, guid: 90547458deeff0e4286f959183522e59, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597815498592638, guid: 90547458deeff0e4286f959183522e59, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597815498592638, guid: 90547458deeff0e4286f959183522e59, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597815498592638, guid: 90547458deeff0e4286f959183522e59, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114768582720372450, guid: 90547458deeff0e4286f959183522e59,
+        type: 2}
+      propertyPath: scoreText
+      value: 
+      objectReference: {fileID: 2048455868}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 90547458deeff0e4286f959183522e59, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1999045910
 GameObject:
   m_ObjectHideFlags: 0
@@ -1360,7 +1372,7 @@ GameObject:
   - component: {fileID: 2048455868}
   m_Layer: 5
   m_Name: Score
-  m_TagString: Untagged
+  m_TagString: Score
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1380,8 +1392,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000038147, y: 450.4}
-  m_SizeDelta: {x: 185.8, y: 77}
+  m_AnchoredPosition: {x: 12.1, y: 450.4}
+  m_SizeDelta: {x: 210, y: 77}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2048455868
 MonoBehaviour:
@@ -1415,7 +1427,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 0
+  m_Text: SCORE
 --- !u!222 &2048455869
 CanvasRenderer:
   m_ObjectHideFlags: 0
