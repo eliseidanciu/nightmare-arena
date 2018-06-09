@@ -23,8 +23,11 @@ public abstract class Enemy : Character
     protected void Start()
     {
         base.Start();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
-        StartCoroutine(UpdatePath());
+        if (target = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>())
+        {
+            StartCoroutine(UpdatePath());
+        }
+        
     }
 
     protected void Update()

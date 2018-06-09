@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FireDemon : Enemy {
 
+    public AudioSource fireBallSound;
+
+
     void Start()
     {
         base.Start();
@@ -12,7 +15,7 @@ public class FireDemon : Enemy {
 
     void Update()
     {
-        if (isAlive)
+        if (isAlive && target.isAlive)
         {
             base.Update();
             Attack();
@@ -31,6 +34,7 @@ public class FireDemon : Enemy {
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("Attack");
             animator.ResetTrigger("Move");
+            fireBallSound.Play();
             Invoke("SpawnBullet", .4f);
         }
         else if (distanceFromTarget < attackDistance && Time.time < nextAttackTime)
