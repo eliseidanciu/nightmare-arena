@@ -12,7 +12,7 @@ public class Stats : MonoBehaviour //Character
     public Text punteggio;
     public FireOrc mostro;
 
-   private float riempimento;
+   public float riempimento;
 
 
     [SerializeField]
