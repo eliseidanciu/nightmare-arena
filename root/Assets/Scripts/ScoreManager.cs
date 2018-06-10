@@ -73,7 +73,7 @@ public class ScoreManager : MonoBehaviour {
         {
             highScore = oldHighScore;
         }
-        highScoreText.text = "High Score: " + highScore.ToString();
+        highScoreText.text = "BEST: " + highScore.ToString();
     }
 
 
