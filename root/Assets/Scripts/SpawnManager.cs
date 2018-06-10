@@ -36,7 +36,6 @@ public class SpawnManager : MonoBehaviour {
         {
             spawnDelay /= difficultyMultiplier;
             timeSinceLastDifficultyIncrement = 0.0f;
-            Debug.Log("Difficulty increased. Spawn delay: " + spawnDelay);
         }
     }
 

@@ -10,16 +10,12 @@ public class SpawnHP : MonoBehaviour
     public Transform spawnPoint1;
     public Transform spawnPoint2;
 
-    Character oggetto;
-    private float vita;
     private float delay = 100f;
     private float firstDelay = 20f;
-    private object objectWithOtherScript;
 
     void Start()
     {
         InvokeRepeating("SpawnLife", firstDelay, delay);
-        oggetto = FindObjectOfType<Player>() as Player;
     }
 
     void Update()
