@@ -16,7 +16,7 @@ public class Player : Character
 
     public Explosion explosionPrefab;
     public Transform explosionSpawn;
-
+    public CameraShake cameraShake;
 
     protected float nextSkillTime;
 
@@ -120,6 +120,12 @@ public class Player : Character
         }
     }
 
+    void ShakeEffect()
+    {
+        StartCoroutine(cameraShake.Shake(.15f, 3f));
+    }
+
+
     public void SpecialAttack()
     {
         if (magic.fillAmount >= 1.0f)
@@ -127,6 +133,7 @@ public class Player : Character
             magic.fillAmount = 0.0f;
             animator.SetTrigger("MeleeAttack");
             skillSound.Play();
+            Invoke("ShakeEffect", .8f);
             Invoke("Explosion", .8f);
         }
 
