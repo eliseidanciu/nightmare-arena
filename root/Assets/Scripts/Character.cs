@@ -15,11 +15,10 @@ public abstract class Character : MonoBehaviour
     public Image magic;
     public Bullet bulletPrefab;
     public Transform bulletSpawn;
-    public GameObject deathParticles;
+    public AudioSource deathSound;
 
     protected const float orcMagic = 0.1f;
     protected const float demonMagic = 0.2f;
-    public AudioSource deathSound;
     protected float nextAttackTime;
     protected Rigidbody rb;
     protected Animator animator;
@@ -41,7 +40,6 @@ public abstract class Character : MonoBehaviour
     {
         float damage = enemyAttackPower / armor * 10;
         hp -= damage;
-        Debug.Log(hp + "hp");
         if(hp <= 0)
         {
             Die();
@@ -63,8 +61,6 @@ public abstract class Character : MonoBehaviour
         moveSpeed = 0;
         Destroy(gameObject, 4f);
         Destroy(bodyCollider);
-        //Instantiate(deathParticles, gameObject.transform.position, gameObject.transform.rotation);
-        Destroy(deathParticles, 1f);
 
     }
 

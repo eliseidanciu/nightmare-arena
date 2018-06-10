@@ -31,7 +31,6 @@ public class ScoreManager : MonoBehaviour {
         if (SceneManager.GetActiveScene().buildIndex == GAME_OVER_INDEX)
         {
             scoreText.text = "Score: " + score.ToString();
-            Debug.Log("Score: " + score.ToString());
             highScoreObj = GameObject.FindGameObjectWithTag("HighScore");
             highScoreText = highScoreObj.GetComponent<Text>();
             CheckHighScore();
@@ -58,16 +57,13 @@ public class ScoreManager : MonoBehaviour {
 
         if (File.Exists(PATH))
         {
-            Debug.Log("File exists");
             string oldHighScoreString = File.ReadAllText(PATH);
             Int32.TryParse(oldHighScoreString, out oldHighScore);
-            Debug.Log("Old HighScore: " + oldHighScore);
         }
         if (score > oldHighScore)
         {
             highScore = score;
             File.WriteAllText(PATH, highScore.ToString());
-            Debug.Log("New High Score " + highScore);
         }
         else
         {

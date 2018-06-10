@@ -9,7 +9,6 @@ public class Player : Character
 {
     Camera viewCamera;
     Vector3 velocity;
-    Vector3 lastPoint;
     AudioSource skillSound;
     AudioSource fireBallSound;
     AudioSource movementSound;
@@ -25,7 +24,6 @@ public class Player : Character
     void Start()
     {
         base.Start();
-        lastPoint = new Vector3();
         viewCamera = Camera.main;
         var soundFX = GetComponents<AudioSource>();
         skillSound = soundFX[1];
