@@ -36,7 +36,8 @@ public class Bullet : MonoBehaviour {
             {
                 var enemy = other.gameObject.GetComponent<Character>();
                 enemy.TakeDamage(attacker.attackPower);
-                Debug.Log(enemy.name + ": " + enemy.hp + "left");
+                //Debug.Log(enemy.name + ": " + enemy.hp + "left");
+
             }
 
             

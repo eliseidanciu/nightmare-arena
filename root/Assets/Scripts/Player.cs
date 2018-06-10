@@ -1,29 +1,44 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
+
+
 
 [RequireComponent(typeof(Camera))]
 public class Player : Character
 {
     Camera viewCamera;
     Vector3 velocity;
+    Vector3 lastPoint;
+    AudioSource skillSound;
+    AudioSource fireBallSound;
+    AudioSource movementSound;
 
     public Explosion explosionPrefab;
     public Transform explosionSpawn;
 
+
     protected float nextSkillTime;
 
-    Vector3 lastPoint = new Vector3(); //the last point the character was looking at before dying
+      //the last point the character was looking at before dying
 
     void Start()
     {
         base.Start();
+        lastPoint = new Vector3();
         viewCamera = Camera.main;
-        Move();
+        var soundFX = GetComponents<AudioSource>();
+        skillSound = soundFX[1];
+        fireBallSound = soundFX[0];
+        movementSound = soundFX[2];
+        
     }
+
     
+
     void Update()
     {
-        if(isAlive)
+        if (isAlive)
         {
             Move();
             Animate();
@@ -38,8 +53,14 @@ public class Player : Character
                 SpecialAttack();
             }
         }
+        else
+        {
+            Invoke("LoadGameOver", 3f);
+        }
       
     }
+
+
 
     public void FixedUpdate()
     {
@@ -49,10 +70,18 @@ public class Player : Character
         }
     }
 
+    //This should me in LevelManager.cs but cant make it work from there.
+    public void LoadGameOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
+
+
     public override void Move()
     {
         Vector3 moveInput = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
         Vector3 moveVelocity = moveInput.normalized * moveSpeed;
+        
 
         if (animator.GetCurrentAnimatorStateInfo(0).IsName("MeleeAttack"))
         {
@@ -80,6 +109,10 @@ public class Player : Character
         if (Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
         {
             animator.SetTrigger("Move");
+            if (!movementSound.isPlaying)
+            {
+                movementSound.Play();
+            }
         }
         else
         {
@@ -89,15 +122,16 @@ public class Player : Character
 
     public void SpecialAttack()
     {
-        if (Time.time > nextSkillTime)
+        if (magic.fillAmount >= 1.0f)
         {
-            float msBetweenAttacks = 60 / attackSpeed * 1000 * 20;
-            nextSkillTime = Time.time + (msBetweenAttacks / 1000);
+            magic.fillAmount = 0.0f;
             animator.SetTrigger("MeleeAttack");
+            skillSound.Play();
             Invoke("Explosion", .8f);
         }
 
     }
+    
 
     public override void Attack()
     {
@@ -106,8 +140,8 @@ public class Player : Character
             float msBetweenAttacks = 60 / attackSpeed * 1000;
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
             animator.SetTrigger("RangedAttack");
-            var newBullet = (Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation));
-            newBullet.attacker = this;
+            fireBallSound.Play();
+            Invoke("SpawnBullet", .2f);
         }
     }
 

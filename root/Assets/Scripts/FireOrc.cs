@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FireOrc : Enemy
 {
+    public AudioSource attackSound;
 
     void Start()
     {
@@ -13,8 +14,15 @@ public class FireOrc : Enemy
 
     void Update()
     {
-        base.Update();
-        Attack();
+        if(isAlive && target.isAlive)
+        {
+            base.Update();
+            Attack();
+        }
+        else
+        {
+            pathfinder.speed = 0;
+        }
     }
 
     public override void Attack()
@@ -23,6 +31,7 @@ public class FireOrc : Enemy
         {
             float msBetweenAttacks = 60 / attackSpeed * 1000;
             nextAttackTime = Time.time + (msBetweenAttacks / 1000);
+            attackSound.Play(3);
             animator.SetTrigger("Attack");
             animator.ResetTrigger("Move");
             target.TakeDamage(attackPower);

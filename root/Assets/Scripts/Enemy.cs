@@ -23,13 +23,19 @@ public abstract class Enemy : Character
     protected void Start()
     {
         base.Start();
-        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>();
-        StartCoroutine(UpdatePath());
+        if (target = GameObject.FindGameObjectWithTag("Player").GetComponent<Character>())
+        {
+            StartCoroutine(UpdatePath());
+        }
+        
     }
 
     protected void Update()
     {
-        
+        if(!isAlive)
+        {
+            pathfinder.speed = 0f;
+        }
     }
 
     public override void Move()
@@ -49,7 +55,7 @@ public abstract class Enemy : Character
     {
         float refreshRate = .25f;
 
-        while (target != null)
+        while (target != null && isAlive)
         {
             Vector3 targetPosition = new Vector3(target.transform.position.x, 0, target.transform.position.z);
             pathfinder.SetDestination(targetPosition);
