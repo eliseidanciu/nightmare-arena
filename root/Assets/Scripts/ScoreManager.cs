@@ -19,11 +19,10 @@ public class ScoreManager : MonoBehaviour {
     Text scoreText;
     Text highScoreText;
 
-    const int GAME_OVER_INDEX = 2;
+    const int GAME_OVER_INDEX = 2; //build index
     const int GAMEPLAY_INDEX = 1;
 
     void Start () {
-
         scoreObj = GameObject.FindGameObjectWithTag("Score");
         scoreText = scoreObj.GetComponent<Text>();
         scoreText.text = score.ToString();
@@ -33,6 +32,7 @@ public class ScoreManager : MonoBehaviour {
             scoreText.text = "Score: " + score.ToString();
             highScoreObj = GameObject.FindGameObjectWithTag("HighScore");
             highScoreText = highScoreObj.GetComponent<Text>();
+
             CheckHighScore();
         }
         else
@@ -52,7 +52,7 @@ public class ScoreManager : MonoBehaviour {
 
     void CheckHighScore()
     {
-        const string PATH = "..\\root\\Assets\\Saves\\highScore.txt";
+        string PATH = Application.persistentDataPath + "highScore.txt";
         int oldHighScore = 0;
 
         if (File.Exists(PATH))
