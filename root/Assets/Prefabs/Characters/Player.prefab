@@ -27,7 +27,6 @@ GameObject:
   - component: {fileID: 82296598197949842}
   - component: {fileID: 82582634482809552}
   - component: {fileID: 82916425408381960}
-  - component: {fileID: 114538589971672850}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2129,17 +2128,6 @@ MonoBehaviour:
     type: 2}
   explosionSpawn: {fileID: 4905862917671290}
   cameraShake: {fileID: 0}
---- !u!114 &114538589971672850
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1014253943818482}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!136 &136615506001174896
 CapsuleCollider:
   m_ObjectHideFlags: 1
