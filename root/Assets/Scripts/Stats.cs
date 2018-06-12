@@ -6,13 +6,8 @@ using UnityEngine.UI;
 
 public class Stats : MonoBehaviour //Character 
 {
-
-
-    public Character oggetto;
-    public Text punteggio;
-    public FireOrc mostro;
-
-   public float riempimento;
+    Character oggetto;
+    public float riempimento;
 
 
     [SerializeField]
@@ -21,7 +16,7 @@ public class Stats : MonoBehaviour //Character
       
 
 	void Start () {
-
+        oggetto = FindObjectOfType<Player>();
     }
 	
 	// Update is called once per frame
