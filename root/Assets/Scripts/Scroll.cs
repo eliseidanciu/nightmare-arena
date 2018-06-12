@@ -11,7 +11,7 @@ public class Scroll : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         speed = 50f;
-        lifeTime = 30f;
+        lifeTime = 60f;
         timePassed = 0f;
 	}
 	
