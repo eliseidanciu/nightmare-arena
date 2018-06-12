@@ -1,20 +1,37 @@
 fileFormatVersion: 2
-guid: 19497d68b37d2594fb3e269601d333be
-timeCreated: 1457627057
+guid: 2000b0413f5f04540aabb88a3ff2bb25
+timeCreated: 1464873803
 licenseType: Store
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Mesh1
+    100004: Candle_01 1
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Rock_Type2_04_mesh
-    6400000: //RootNode
-    9500000: //RootNode
-  externalObjects: {}
+    400002: Mesh1
+    400004: Candle_01 1
+    2300000: Mesh1
+    2300002: Candle_01 1
+    3300000: Mesh1
+    3300002: Candle_01 1
+    4300000: Mesh1
+    4300002: Candle_01
+    6400000: Mesh1
+    6400002: Candle_01 1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_C25
+    second: {fileID: 2100000, guid: 96b2bf623bbd4cf4da48ed0fa46d55ce, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Color_D05
+    second: {fileID: 2100000, guid: cc9adca26a8ec0646ab51096a7f44b76, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -42,15 +59,15 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1.5
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 0
-    importBlendShapes: 0
+    importBlendShapes: 1
     importCameras: 0
     importLights: 0
     swapUVChannels: 0
-    generateSecondaryUV: 1
+    generateSecondaryUV: 0
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
@@ -67,7 +84,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 0
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
