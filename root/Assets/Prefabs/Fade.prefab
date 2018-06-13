@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 222370566287009464}
   - component: {fileID: 114359776581180428}
   - component: {fileID: 95931591090478702}
-  - component: {fileID: 114590279083751028}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -74,18 +73,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114590279083751028
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1139919361083488}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 892fe8245d4348c49848d5a1be01f2a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 95931591090478702}
 --- !u!222 &222370566287009464
 CanvasRenderer:
   m_ObjectHideFlags: 1
