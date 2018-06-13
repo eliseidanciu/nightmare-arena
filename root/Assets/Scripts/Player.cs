@@ -12,6 +12,7 @@ public class Player : Character
     AudioSource skillSound;
     AudioSource fireBallSound;
     AudioSource movementSound;
+    public Animator fadeAnimator;//LEO
 
     public Explosion explosionPrefab;
     public Transform explosionSpawn;
@@ -53,6 +54,8 @@ public class Player : Character
         }
         else
         {
+            fadeAnimator.SetTrigger("FadeOut"); //LEO
+
             Invoke("LoadGameOver", 3f);
         }
       
