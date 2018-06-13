@@ -25,7 +25,6 @@ public abstract class Character : MonoBehaviour
     protected CapsuleCollider bodyCollider;
 
 
-
     public abstract void Move();
     public abstract void Attack();
 
@@ -38,6 +37,7 @@ public abstract class Character : MonoBehaviour
 
     public virtual void TakeDamage(float enemyAttackPower)
     {
+        
         float damage = enemyAttackPower / armor * 10;
         hp -= damage;
         if(hp <= 0)

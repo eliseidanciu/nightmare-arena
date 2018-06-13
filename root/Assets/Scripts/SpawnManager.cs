@@ -32,7 +32,7 @@ public class SpawnManager : MonoBehaviour {
     void IncreaseDifficulty()
     {
         timeSinceLastDifficultyIncrement += Time.deltaTime;
-        if (timeSinceLastDifficultyIncrement >= timeBetweenDifficultyIncrements && spawnDelay >= 3.0f)
+        if (timeSinceLastDifficultyIncrement >= timeBetweenDifficultyIncrements && spawnDelay >= 1.0f)
         {
             spawnDelay /= difficultyMultiplier;
             timeSinceLastDifficultyIncrement = 0.0f;
@@ -45,12 +45,23 @@ public class SpawnManager : MonoBehaviour {
         if (spawnDelay <= timeSinceLastSpawn)
         {
             timeSinceLastSpawn = 0.0f;
-            for (int i = 0; i < enemies.Length; i++)
-            {
-                Instantiate(enemies[i], spawnPoints[i]);
-            }
+            
+
+            var enemy = Instantiate(enemies[GetRandomInteger()]);
+            enemy.transform.position = spawnPoints[GetRandomInteger()].position;
+
+
         }
     }
     
+    int GetRandomInteger()
+    {
+        float indexFloat = Random.Range(0f, 1f);
+        int index = 0;
+        if (indexFloat > 0.5f)
+            index = 1;
+
+        return index;
+    }
 
 }

@@ -38,8 +38,9 @@ GameObject:
   - component: {fileID: 4000011618769180}
   - component: {fileID: 198000010234900202}
   - component: {fileID: 199000013699490908}
+  - component: {fileID: 114258362116383952}
   m_Layer: 0
-  m_Name: Ef_SparksParticle_01
+  m_Name: BlueSparks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,8 +53,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013267560804}
   m_LocalRotation: {x: -0.7071069, y: 0, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: -1.6523488, y: -2.9496175e-17, z: 33.20974}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 2.5940065, y: 9.33, z: -9.269906}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4000012407433812}
   m_Father: {fileID: 0}
@@ -72,6 +73,18 @@ Transform:
   m_Father: {fileID: 4000011618769180}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114258362116383952
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013267560804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d00a780109415794eb091c76f47f5a58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 1
 --- !u!198 &198000010234900202
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1011,32 +1024,32 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 0.96862745, b: 0.9019608, a: 1}
-        key2: {r: 1, g: 0.8901961, b: 0, a: 1}
-        key3: {r: 1, g: 0, b: 0, a: 0}
-        key4: {r: 1, g: 0, b: 0, a: 0}
+        key1: {r: 1, g: 0.9647059, b: 0.8980392, a: 1}
+        key2: {r: 0.63666326, g: 0.99264705, b: 0.92982644, a: 0}
+        key3: {r: 0, g: 0.9632353, b: 0.70826125, a: 0}
+        key4: {r: 0.010344803, g: 0.7380327, b: 1, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 0
-        ctime1: 9830
-        ctime2: 26407
-        ctime3: 65535
-        ctime4: 65535
+        ctime1: 14264
+        ctime2: 18119
+        ctime3: 26600
+        ctime4: 52900
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 5012
-        atime2: 51850
+        atime1: 54741
+        atime2: 65535
         atime3: 65535
         atime4: 0
         atime5: 0
         atime6: 0
         atime7: 0
         m_Mode: 0
-        m_NumColorKeys: 4
-        m_NumAlphaKeys: 4
+        m_NumColorKeys: 5
+        m_NumAlphaKeys: 3
       minGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -3475,7 +3488,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 625606980
+  randomSeed: -202480476
   InitialModule:
     serializedVersion: 3
     enabled: 1
